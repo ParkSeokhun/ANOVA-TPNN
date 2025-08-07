@@ -71,8 +71,8 @@ class TPNN(ModuleWithInit):
         
         if self.training == True:
             # For satisfying sum-to-zero condtion
-            const1 = bins.sum(axis=0)[:,:,1]
-            const2 = bins.sum(axis=0)[:,:,0]
+            const1 = bins.sum(axis=0)[:,:,1] + 1e-3
+            const2 = bins.sum(axis=0)[:,:,0] + 1e-3
             ratio = - const2 /const1
             ones = torch.ones(ratio.shape).to(input.device)
             
