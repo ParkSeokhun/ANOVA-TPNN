@@ -370,7 +370,7 @@ def cal_UoC(all_data_loader, model_path, num_tpnn, max_order, in_features,device
                     
             for n in range(0,all_output_trial.shape[1]):
                 if np.sqrt(np.sum(np.array(all_output_trial[:,n])**2))   != 0:
-                    all_output_trial[:,n] = all_output_trial[:,n] /np.sqrt(np.sum(np.array(all_output_trial[:,n])**2))
+                    all_output_trial[:,n] = all_output_trial[:,n] / np.sum(np.array(all_output_trial[:,n])**2)
 
                         
         var_sum =0
