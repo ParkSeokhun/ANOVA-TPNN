@@ -271,7 +271,7 @@ def bases_gen_odst(in_features,
 
 
 ## Evaluate stable Interpretability
-def cal_UoC(all_data_loader, model_path, num_tpnn, max_order, in_features,device,regression,normalize = False,interaction_list = [],num_seed=10):
+def cal_UoC(all_data_loader, model_path, num_tpnn, max_order, in_features,device,regression,normalize = True,interaction_list = [],num_seed=10):
 
     device = device
     choice_function=nn_utils.entmax15
