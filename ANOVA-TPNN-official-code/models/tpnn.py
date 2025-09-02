@@ -31,7 +31,9 @@ class TPNN(ModuleWithInit):
         
         self.final_response = nn.Parameter(torch.stack([self.response_]*(2**self.in_features),dim=2), requires_grad=False)
         
+        self.final_id_const = nn.Parameter(torch.zeros((num_tpnn,1,2)),requires_grad=False)
 
+                     
         self.feature_thresholds = nn.Parameter(
             torch.full([num_tpnn, in_features], float('nan'), dtype=torch.float32), requires_grad=True
         )  # nan values will be initialized on first batch (data-aware init)
