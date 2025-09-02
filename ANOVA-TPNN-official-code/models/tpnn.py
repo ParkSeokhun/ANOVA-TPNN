@@ -31,7 +31,7 @@ class TPNN(ModuleWithInit):
         
         self.final_response = nn.Parameter(torch.stack([self.response_]*(2**self.in_features),dim=2), requires_grad=False)
         
-        self.final_id_const = nn.Parameter(torch.zeros((num_tpnn,1,2)),requires_grad=False)
+        self.final_id_const = nn.Parameter(torch.zeros((num_tpnn,in_features,2)),requires_grad=False)
 
                      
         self.feature_thresholds = nn.Parameter(
